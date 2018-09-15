@@ -24,8 +24,8 @@ export class NewProblemComponent implements OnInit {
 
 
   constructor(
-  	@Inject ("data") private data
-  ) { }
+  	@Inject ("data") private data,
+    @Inject ("authGuard") private authGuard ) { }
 
   ngOnInit() {
   }
