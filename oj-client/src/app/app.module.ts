@@ -18,6 +18,7 @@ import { AuthGuardService } from "./services/auth-guard.service";
 import { NewProblemComponent } from './components/new-problem/new-problem.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 
 
@@ -28,7 +29,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProblemDetailComponent,
     NewProblemComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
