@@ -81,7 +81,7 @@ public:
     this.collaboration.init();
 
     document.getElementById('editor').focus();
-
+    //document.getElementByTagName('textarea')[0].focus();
 
     this.collaboration.init(this.editor, this.sessionId);
     this.editor.lastAppliedChange = null;
@@ -104,7 +104,7 @@ public:
     this.collaboration.restoreBuffer();
   }// initEditor ends
 
-  
+
   resetEditor(): void {
   	this.editor.getSession().setMode('ace/mode/' + this.language.toLowerCase());
   	this.editor.setTheme('ace/theme/' + this.theme.toLowerCase());
