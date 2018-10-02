@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {Problem } from "../../models/problem.model";
+import {DataService ] from '../../services/data.service';
 
 
 const DEFAULT_PROBLEM: Problem = Object.freeze({
@@ -17,13 +18,14 @@ const DEFAULT_PROBLEM: Problem = Object.freeze({
 })
 export class NewProblemComponent implements OnInit {
 
-	 public difficulties = ["Easy", "Medium", "Hard", "Super"];
+	 public difficulties: string[] = ["Easy", "Medium", "Hard", "Super"];
 
 	 newProblem: Problem = Object.assign({}, DEFAULT_PROBLEM);
 
 
 
   constructor(
+    private dataService: DataService,
   	@Inject ("data") private data,
     @Inject ("authGuard") private authGuard ) { }
 
@@ -31,8 +33,12 @@ export class NewProblemComponent implements OnInit {
   }
 
   addProblem(): void {
-  		this.data.addProblem(this.newProblem)
-        .catch(error => console.log(error._body));
+    
+    
+//   		this.data.addProblem(this.newProblem)
+//         .catch(error => console.log(error._body));
+    
+      this.dataService.addProblem(this.newProblem);
   		this.newProblem = Object.assign({},DEFAULT_PROBLEM );
 
 
