@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Problem } from '../../models/problem.model';
 import { ActivatedRoute, Params} from "@angular/router";
+import { DataService} from '../../services/data.service';
+
 
 @Component({
   selector: 'app-problem-detail',
@@ -13,6 +15,7 @@ export class ProblemDetailComponent implements OnInit {
 
 
   constructor(
+    private dataService: DataService,
   	private route: ActivatedRoute,
   	@Inject("data") private data
   ) { }
